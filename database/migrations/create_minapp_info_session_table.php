@@ -21,7 +21,6 @@ class CreateMinappInfoSessionTable extends Migration
             $table->string('ip',50)->default('0.0.0.0');
             $table->softDeletes();
             $table->timestamps();
-            $table->primary('id');
         });
         Schema::create('sessioninfos', function(Blueprint $table){
             $table->increments('id');
