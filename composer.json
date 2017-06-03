@@ -1,7 +1,7 @@
 {
     "name": "osub/webstar-minapp-session",
     "description": "微信小程序会话管理",
-    "type": "wechat, minapp, session, login, auth, 微信小程, 会话管理",
+    "type": "wechat, minapp, session, login, auth",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +9,10 @@
             "email": "webstarchina@gmail.com"
         }
     ],
+    "require-dev": {
+        "laravel/laravel": "5.*",
+        "phpunit/phpunit": "~5.0"
+    },
     "autoload": {
         "psr-4": {
             "Osub\\LaravelMinappSession\\": "src/"
