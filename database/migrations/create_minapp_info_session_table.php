@@ -16,8 +16,8 @@ class CreateMinappInfoSessionTable extends Migration
             $table->increments('id');
             $table->string('appid',200)->unique()->comment('小程序的appid');
             $table->string('secret',300);
-            $table->integer('login_duration',11)->default(30)->comment('登录有效期');
-            $table->integer('session_duration',11)->default(2592000)->comment('session有效期');
+            $table->integer('login_duration')->default(30)->comment('登录有效期');
+            $table->integer('session_duration')->default(2592000)->comment('session有效期');
             $table->string('ip',50)->default('0.0.0.0');
             $table->softDeletes();
             $table->timestamps();
@@ -32,7 +32,6 @@ class CreateMinappInfoSessionTable extends Migration
             $table->dateTime('last_visit');
             $table->softDeletes();
             $table->timestamps();
-            $table->primary('id');
             $table->index(['user_id','skey'], 'auth');
             $table->index(['openid','session_key'], 'weixin');
         });
