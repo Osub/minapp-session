@@ -18,5 +18,15 @@
             "Osub\\LaravelMinappSession\\": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=Osub\\LaravelMinappSession\\MinappServiceProvider --tag=migrations",
+            "php artisan vendor:publish --provider=Osub\\LaravelMinappSession\\MinappServiceProvider --tag=config"
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --provider=Osub\\LaravelMinappSession\\MinappServiceProvider --tag=migrations",
+            "php artisan vendor:publish --provider=Osub\\LaravelMinappSession\\MinappServiceProvider --tag=config"
+        ]
+    },
     "require": {}
 }
