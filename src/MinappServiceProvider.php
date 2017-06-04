@@ -38,5 +38,8 @@ class MinappServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/minapp.php', 'minapp');
+        $this->app->singleton(Osub\LaravelMinappSession\Auth\Auth::class, function ($app) {
+            return new Auth();
+        });
     }
 }
